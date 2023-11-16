@@ -70,7 +70,9 @@ public class Engine extends Canvas implements Runnable{
     }
 
     public void clearPixel (int x, int y) {
-        pixels[y*WIDTH + x] = 0;
+        if (x >= 0 && x < WIDTH && y >= 0 && y < HEIGHT) {
+            pixels[y * WIDTH + x] = 0;
+        }
     }
 
     public synchronized void start() {
