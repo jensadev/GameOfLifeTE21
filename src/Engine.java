@@ -57,7 +57,6 @@ public class Engine extends Canvas implements Runnable{
             return;
         }
         Graphics g = bs.getDrawGraphics();
-
         // Rita ut den nya bilden
         g.drawImage(image, 0, 0, WIDTH*scale, HEIGHT*scale, null);
         g.dispose();
@@ -68,6 +67,10 @@ public class Engine extends Canvas implements Runnable{
         if (x >= 0 && x < WIDTH && y >= 0 && y < HEIGHT) {
             pixels[y*WIDTH + x] = color;
         }
+    }
+
+    public void clearPixel (int x, int y) {
+        pixels[y*WIDTH + x] = 0;
     }
 
     public synchronized void start() {
